@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+    {% load static %}
+        <title>Time Table</title>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <link href="{% static 'assets/img/favicon.png' %}" rel="icon">
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css">
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"></script>
+        <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js"></script>
+        <style>
+			body
+			{
+				background: #6c7ae0;
+				padding:0 5vw;
+			}
+			div
+			{
+				display: block;
+				margin-left: auto;
+				margin-right: auto;
+				margin-top: 20vh;
+				border-radius: 10px;
+				padding: 30px;
+				background: white;
+				width:100%;
+				position: center;
+			}
+			.btn
+			{
+				width: 150px;
+			}
+			.table thead td 
+			{
+				color: #fff;
+				background-color: #343a40;
+				border-color: #454d55;
+				font-weight:bold;
+			}
+        </style>
+    </head>
+    <body>
+        <script>
+            var timetable="{{timetable}}";
+            if (timetable=="Not Found")
+            {
+                alert(timetable);
+                location.href="/";
+            }
+        </script>
+        <div>
+			<table class="table table-hover table-bordered table-striped table-responsive-lg">
+			{% for i in timetable %}
+				{% cycle '<thead><tr>' '<tbody><tr>' '<tr>' '<tr>' '<tr>' '</tr>'%}
+					{% for j in i %}
+						{% cycle '<td>' '<td>' '<td>' '<td>' '<td>' '<td>'%}
+							{{j}}
+						{% cycle '</td>' '</td>' '</td>' '</td>' '</td>' '</td>'%}
+					{% endfor %}
+				{% cycle '</tr></thead>' '</tr>' '</tr>' '</tr>' '</tr>' '</tr></tbody>' %}
+			{% endfor %}
+			</table>
+			<br>
+			<center><a href="/" class="btn btn-md btn-outline-primary">Back</a></center>
+		</div>
+    </body>
+</html>

@@ -1,0 +1,483 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  {% load static %}
+  <meta charset="utf-8">
+
+  <!-- Favicons -->
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  <link href="{% static 'assets/img/favicon.png' %}" rel="icon">
+  <link href="{% static 'assets/img/apple-touch-icon.png' %}" rel="apple-touch-icon">
+
+  <!-- Google Fonts -->
+  <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,300i,400,400i,600,600i,700,700i|Jost:300,300i,400,400i,500,500i,600,600i,700,700i|Poppins:300,300i,400,400i,500,500i,600,600i,700,700i" rel="stylesheet">
+
+  <!-- Vendor CSS Files -->
+  <link href="{% static 'assets/vendor/bootstrap/css/bootstrap.min.css' %}" rel="stylesheet">
+  <link href="{% static 'assets/vendor/icofont/icofont.min.css' %}" rel="stylesheet">
+  <link href="{% static 'assets/vendor/boxicons/css/boxicons.min.css' %}" rel="stylesheet">
+  <link href="{% static 'assets/vendor/remixicon/remixicon.css' %}" rel="stylesheet">
+  <link href="{% static 'assets/vendor/venobox/venobox.css' %}" rel="stylesheet">
+  <link href="{% static 'assets/vendor/owl.carousel/assets/owl.carousel.min.css' %}" rel="stylesheet">
+  <link href="{% static 'assets/vendor/aos/aos.css' %}" rel="stylesheet">
+   <link href="{% static 'assets/css/style.css' %}" rel="stylesheet">
+</head>
+
+<body>
+
+  <!-- ======= Header ======= -->
+  <header id="header" class="fixed-top ">
+    <div class="container d-flex align-items-center">
+
+      <h1 class="logo mr-auto"><a href="index.html">AMCS TimeTable</a></h1>
+      <!-- Uncomment below if you prefer to use an image logo -->
+      <!-- <a href="index.html" class="logo mr-auto"><img src="assets/img/logo.png" alt="" class="img-fluid"></a>-->
+
+	<nav class="nav-menu d-none d-lg-block">
+        <ul>
+			<li class="drop-down"><a href="">Timetables</a>
+				<ul>
+					<li class="drop-down"><a href="#">Software Systems</a>
+						<ul>
+							<li>
+								<form name="form" action ="{% url 'Timetable' %}" method = "POST">{% csrf_token %}
+									<input type="hidden" id="class" name="Class" value="2s">
+									<input type="submit" value="2nd Semester Timetable">
+								</form>
+							</li>
+							<li>
+								<form name="form" action ="{% url 'Timetable' %}" method = "POST">{% csrf_token %}
+									<input type="hidden" id="class" name="Class" value="4s">
+									<input type="submit" value="4th Semester Timetable">
+								</form>
+							</li>
+							<li>
+								<form name="form" action ="{% url 'Timetable' %}" method = "POST">{% csrf_token %}
+									<input type="hidden" id="class" name="Class" value="6s">
+									<input type="submit" value="6th Semester Timetable">
+								</form>
+							</li>
+						</ul>
+					</li>
+					<li class="drop-down"><a href="#">Data Science</a>
+						<ul>
+							<li>
+								<form name="form" action ="{% url 'Timetable' %}" method = "POST">{% csrf_token %}
+									<input type="hidden" id="class" name="Class" value="2d">
+									<input type="submit" value="2nd Semester Timetable">
+								</form>
+							</li>
+							<li>
+								<form name="form" action ="{% url 'Timetable' %}" method = "POST">{% csrf_token %}
+									<input type="hidden" id="class" name="Class" value="4d">
+									<input type="submit" value="4th Semester Timetable">
+								</form>
+							</li>
+							<li>
+								<form name="form" action ="{% url 'Timetable' %}" method = "POST">{% csrf_token %}
+									<input type="hidden" id="class" name="Class" value="6d">
+									<input type="submit" value="6th Semester Timetable">
+								</form>
+							</li>
+						</ul>
+					</li>
+					<li class="drop-down"><a href="#">Theoretical Computer Science</a>
+						<ul>
+							<li>
+								<form name="form" action ="{% url 'Timetable' %}" method = "POST">{% csrf_token %}
+									<input type="hidden" id="class" name="Class" value="2t">
+									<input type="submit" value="2nd Semester Timetable">
+								</form>
+							</li>
+							<li>
+								<form name="form" action ="{% url 'Timetable' %}" method = "POST">{% csrf_token %}
+									<input type="hidden" id="class" name="Class" value="4t">
+									<input type="submit" value="4th Semester Timetable">
+								</form>
+							</li>
+							<li>
+								<form name="form" action ="{% url 'Timetable' %}" method = "POST">{% csrf_token %}
+									<input type="hidden" id="class" name="Class" value="6t">
+									<input type="submit" value="6th Semester Timetable">
+								</form>
+							</li>
+						</ul>
+					</li>
+					<li class="drop-down"><a href="#">Cyber Security</a>
+						<ul>
+							<li>
+								<form name="form" action ="{% url 'Timetable' %}" method = "POST">{% csrf_token %}
+									<input type="hidden" id="class" name="Class" value="2c">
+									<input type="submit" value="2nd Semester Timetable">
+								</form>
+							</li>
+						</ul>
+					</li>
+				</ul>
+			</li>
+			<li class="drop-down"><a href="">Teachers</a>
+				<ul style="left:-200px;">
+					<div style="display:flex;">
+						<li class="drop-down">
+							<form name="form" action ="{% url 'Timetable' %}" method = "POST">{% csrf_token %}
+								<input type="hidden" id="class" name="Class" value="Kumaraesan">
+								<input type="submit" value="Kumaraesan">
+							</form>
+						</li>
+						<li class="drop-down">
+							<form name="form" action ="{% url 'Timetable' %}" method = "POST">{% csrf_token %}
+								<input type="hidden" id="class" name="Class" value="Geetha">
+								<input type="submit" value="Geetha">
+							</form>
+						</li>
+						<li class="drop-down">
+							<form name="form" action ="{% url 'Timetable' %}" method = "POST">{% csrf_token %}
+								<input type="hidden" id="class" name="Class" value="Poondhalir">
+								<input type="submit" value="Poondhalir">
+							</form>
+						</li>
+					</div>
+					<div style="display:flex;">
+						<li class="drop-down">
+							<form name="form" action ="{% url 'Timetable' %}" method = "POST">{% csrf_token %}
+								<input type="hidden" id="class" name="Class" value="Natarajan">
+								<input type="submit" value="Natarajan">
+							</form>
+						</li>
+						<li class="drop-down">
+							<form name="form" action ="{% url 'Timetable' %}" method = "POST">{% csrf_token %}
+								<input type="hidden" id="class" name="Class" value="Aneetha">
+								<input type="submit" value="Aneetha">
+							</form>
+						</li>
+						<li class="drop-down">
+							<form name="form" action ="{% url 'Timetable' %}" method = "POST">{% csrf_token %}
+								<input type="hidden" id="class" name="Class" value="Nirmala">
+								<input type="submit" value="Nirmala">
+							</form>
+						</li>
+					</div>
+					<div style="display:flex;">
+						<li class="drop-down">
+							<form name="form" action ="{% url 'Timetable' %}" method = "POST">{% csrf_token %}
+								<input type="hidden" id="class" name="Class" value="Priyalaksmi">
+								<input type="submit" value="Priyalaksmi">
+							</form>
+						</li>
+						<li class="drop-down">
+							<form name="form" action ="{% url 'Timetable' %}" method = "POST">{% csrf_token %}
+								<input type="hidden" id="class" name="Class" value="Kalyana sundaram">
+								<input type="submit" value="Kalyana sundaram">
+							</form>
+						</li>
+						<li class="drop-down">
+							<form name="form" action ="{% url 'Timetable' %}" method = "POST">{% csrf_token %}
+								<input type="hidden" id="class" name="Class" value="Navaneethan">
+								<input type="submit" value="Navaneethan">
+							</form>
+						</li>
+					</div>
+					<div style="display:flex;">
+						<li class="drop-down">
+							<form name="form" action ="{% url 'Timetable' %}" method = "POST">{% csrf_token %}
+								<input type="hidden" id="class" name="Class" value="Periakaruppan">
+								<input type="submit" value="Periakaruppan">
+							</form>
+						</li>
+						<li class="drop-down">
+							<form name="form" action ="{% url 'Timetable' %}" method = "POST">{% csrf_token %}
+								<input type="hidden" id="class" name="Class" value="Kiruthika">
+								<input type="submit" value="Kiruthika">
+							</form>
+						</li>
+						<li class="drop-down">
+							<form name="form" action ="{% url 'Timetable' %}" method = "POST">{% csrf_token %}
+								<input type="hidden" id="class" name="Class" value="Sivakami">
+								<input type="submit" value="Sivakami">
+							</form>
+						</li>
+					</div>
+					<div style="display:flex;">
+						<li class="drop-down">
+							<form name="form" action ="{% url 'Timetable' %}" method = "POST">{% csrf_token %}
+								<input type="hidden" id="class" name="Class" value="Suganthi">
+								<input type="submit" value="Suganthi">
+							</form>
+						</li>
+						<li class="drop-down">
+							<form name="form" action ="{% url 'Timetable' %}" method = "POST">{% csrf_token %}
+								<input type="hidden" id="class" name="Class" value="Latha">
+								<input type="submit" value="Latha">
+							</form>
+						</li>
+						<li class="drop-down">
+							<form name="form" action ="{% url 'Timetable' %}" method = "POST">{% csrf_token %}
+								<input type="hidden" id="class" name="Class" value="Shina sheen">
+								<input type="submit" value="Shina sheen">
+							</form>
+						</li>
+					</div>
+					<div style="display:flex;">
+						<li class="drop-down">
+							<form name="form" action ="{% url 'Timetable' %}" method = "POST">{% csrf_token %}
+								<input type="hidden" id="class" name="Class" value="Sreeja">
+								<input type="submit" value="Sreeja">
+							</form>
+						</li>
+						<li class="drop-down">
+							<form name="form" action ="{% url 'Timetable' %}" method = "POST">{% csrf_token %}
+								<input type="hidden" id="class" name="Class" value="Jeevadoss">
+								<input type="submit" value="Jeevadoss">
+							</form>
+						</li>
+						<li class="drop-down">
+							<form name="form" action ="{% url 'Timetable' %}" method = "POST">{% csrf_token %}
+								<input type="hidden" id="class" name="Class" value="Shakthiganesan">
+								<input type="submit" value="Shakthiganesan">
+							</form>
+						</li>
+					</div>
+					<div style="display:flex;">
+						<li class="drop-down">
+							<form name="form" action ="{% url 'Timetable' %}" method = "POST">{% csrf_token %}
+								<input type="hidden" id="class" name="Class" value="Indhumathi raman">
+								<input type="submit" value="Indhumathi raman">
+							</form>
+						</li>
+						<li class="drop-down">
+							<form name="form" action ="{% url 'Timetable' %}" method = "POST">{% csrf_token %}
+								<input type="hidden" id="class" name="Class" value="Thilaga">
+								<input type="submit" value="Thilaga">
+							</form>
+						</li>
+						<li class="drop-down">
+							<form name="form" action ="{% url 'Timetable' %}" method = "POST">{% csrf_token %}
+								<input type="hidden" id="class" name="Class" value="Karthick">
+								<input type="submit" value="Karthick">
+							</form>
+						</li>
+					</div>
+					<div style="display:flex;">
+						<li class="drop-down">
+							<form name="form" action ="{% url 'Timetable' %}" method = "POST">{% csrf_token %}
+								<input type="hidden" id="class" name="Class" value="Krishnasamy">
+								<input type="submit" value="Krishnasamy">
+							</form>
+						</li>
+						<li class="drop-down">
+							<form name="form" action ="{% url 'Timetable' %}" method = "POST">{% csrf_token %}
+								<input type="hidden" id="class" name="Class" value="SendhilKumaran.M">
+								<input type="submit" value="SendhilKumaran.M">
+							</form>
+						</li>
+						<li class="drop-down">
+							<form name="form" action ="{% url 'Timetable' %}" method = "POST">{% csrf_token %}
+								<input type="hidden" id="class" name="Class" value="SendhilKumaran.V">
+								<input type="submit" value="SendhilKumaran.V">
+							</form>
+						</li>
+					</div>
+					<div style="display:flex;">
+						<li class="drop-down">
+							<form name="form" action ="{% url 'Timetable' %}" method = "POST">{% csrf_token %}
+								<input type="hidden" id="class" name="Class" value="Leksmi">
+								<input type="submit" value="Leksmi">
+							</form>
+						</li>
+						<li class="drop-down">
+							<form name="form" action ="{% url 'Timetable' %}" method = "POST">{% csrf_token %}
+								<input type="hidden" id="class" name="Class" value="Kasthuri Bai">
+								<input type="submit" value="Kasthuri Bai">
+							</form>
+						</li>
+						<li class="drop-down">
+							<form name="form" action ="{% url 'Timetable' %}" method = "POST">{% csrf_token %}
+								<input type="hidden" id="class" name="Class" value="Suresh Balusamy">
+								<input type="submit" value="Suresh Balusamy">
+							</form>
+						</li>
+					</div>
+					<div style="display:flex;">
+						<li class="drop-down">
+							<form name="form" action ="{% url 'Timetable' %}" method = "POST">{% csrf_token %}
+								<input type="hidden" id="class" name="Class" value="Sridevi">
+								<input type="submit" value="Sridevi">
+							</form>
+						</li>
+						<li class="drop-down">
+							<form name="form" action ="{% url 'Timetable' %}" method = "POST">{% csrf_token %}
+								<input type="hidden" id="class" name="Class" value="Muthusamy">
+								<input type="submit" value="Muthusamy">
+							</form>
+						</li>
+						<li class="drop-down">
+							<form name="form" action ="{% url 'Timetable' %}" method = "POST">{% csrf_token %}
+								<input type="hidden" id="class" name="Class" value="Anandhi">
+								<input type="submit" value="Anandhi">
+							</form>
+						</li>
+					</div>
+					<div style="display:flex;">
+						<li class="drop-down">
+							<form name="form" action ="{% url 'Timetable' %}" method = "POST">{% csrf_token %}
+								<input type="hidden" id="class" name="Class" value="Malar">
+								<input type="submit" value="Malar">
+							</form>
+						</li>
+						<li class="drop-down">
+							<form name="form" action ="{% url 'Timetable' %}" method = "POST">{% csrf_token %}
+								<input type="hidden" id="class" name="Class" value="Parisa Begum">
+								<input type="submit" value="Parisa Begum">
+							</form>
+						</li>
+						<li class="drop-down">
+							<form name="form" action ="{% url 'Timetable' %}" method = "POST">{% csrf_token %}
+								<input type="hidden" id="class" name="Class" value="SureshKumar.V">
+								<input type="submit" value="SureshKumar.V">
+							</form>
+						</li>
+					</div>
+					<div style="display:flex;">
+						<li class="drop-down">
+							<form name="form" action ="{% url 'Timetable' %}" method = "POST">{% csrf_token %}
+								<input type="hidden" id="class" name="Class" value="Thanalaksmi">
+								<input type="submit" value="Thanalaksmi">
+							</form>
+						</li>
+						<li class="drop-down">
+							<form name="form" action ="{% url 'Timetable' %}" method = "POST">{% csrf_token %}
+								<input type="hidden" id="class" name="Class" value="KajaMohideen">
+								<input type="submit" value="KajaMohideen">
+							</form>
+						</li>
+					</div>
+				</ul>
+			</li>
+        </ul>
+	</nav><!-- .nav-menu -->
+
+      <a href="#team" class="get-started-btn scrollto">Get Started</a>
+
+    </div>
+  </header><!-- End Header -->
+
+  <!-- ======= Hero Section ======= -->
+  <section id="hero" class="d-flex align-items-center">
+
+    <div class="container">
+      <div class="row">
+        <div class="col-lg-6 d-flex flex-column justify-content-center pt-4 pt-lg-0 order-2 order-lg-1" data-aos="fade-up" data-aos-delay="200">
+          <h1>Time Table Allocator</h1>
+          <h2>The aim of the site is to create TimeTable for even semester using vertex colouring</h2>
+          <div class="d-lg-flex">
+            <a href="#team" class="btn-get-started scrollto">Get Started</a>
+          </div>
+        </div>
+        <div class="col-lg-6 order-1 order-lg-2 hero-img" data-aos="zoom-in" data-aos-delay="200">
+          <img src="{% static 'assets/img/hero-img.png' %}" class="img-fluid animated" alt="">
+        </div>
+      </div>
+    </div>
+
+  </section><!-- End Hero -->
+
+  <main id="main">
+    <!-- ======= Why Us Section ======= -->
+    </section><!-- End Team Section -->
+    <section id="team" class="team section-bg">
+      <div class="container" data-aos="fade-up">
+          <div class="section-title">
+              <h2>TimeTable Finder</h2>
+              <p>Enter the class to know the timetable for example<br> 2s(2nd semester software systems)</p>
+          </div>
+          <footer id="footer">
+            <div class="footer-newsletter">
+              <div class="container">
+                <div class="row justify-content-center">
+                  <div class="col-lg-6">
+                    <form name="form" action ="{% url 'Timetable' %}" method = "POST">{% csrf_token %}
+						<input type="text" class="form-control" id="class" name="Class" list="timetable">
+						<datalist id="timetable">
+							<option value="2s">2s</option>
+							<option value="4s">4s</option>
+							<option value="6s">6s</option>
+							<option value="2t">2t</option>
+							<option value="4t">4t</option>
+							<option value="6t">6t</option>
+							<option value="2d">2d</option>
+							<option value="4d">4d</option>
+							<option value="6d">6d</option>
+							<option value="2cs">2cs</option>
+							
+							<option value="Kumaraesan">Kumaraesan</option>
+							<option value="Geetha">Geetha</option>
+							<option value="Poondhalir">Poondhalir</option>
+							<option value="Natarajan">Natarajan</option>
+							<option value="Aneetha">Aneetha</option>
+							<option value="Nirmala">Nirmala</option>
+							<option value="Priyalaksmi">Priyalaksmi</option>
+							<option value="Kalyana sundaram">Kalyana sundaram</option>
+							<option value="Navaneethan">Navaneethan</option>
+							<option value="Periakaruppan">Periakaruppan</option>
+							<option value="Kiruthika">Kiruthika</option>
+							<option value="Sivakami">Sivakami</option>
+							<option value="Suganthi">Suganthi</option>
+							<option value="Latha">Latha</option>
+							
+							<option value="Shina sheen">Shina sheen</option>
+							<option value="Sreeja">Sreeja</option>
+							<option value="Jeevadoss">Jeevadoss</option>
+							<option value="Shakthiganesan">Shakthiganesan</option>
+							<option value="Indhumathi raman">Indhumathi raman</option>
+							<option value="Thilaga">Thilaga</option>
+							<option value="Karthick">Karthick</option>
+							<option value="Krishnasamy">Krishnasamy</option>
+							<option value="SendhilKumaran.M">SendhilKumaran.M</option>
+							<option value="SendhilKumaran.V">SendhilKumaran.V</option>
+							<option value="Leksmi">Leksmi</option>
+							<option value="Kasthuri Bai">Kasthuri Bai</option>
+							
+							<option value="Suresh Balusamy">Suresh Balusamy</option>
+							<option value="Sridevi">Sridevi</option>
+							<option value="Muthusamy">Muthusamy</option>
+							<option value="Anandhi">Anandhi</option>
+							<option value="Malar">Malar</option>
+							<option value="Parisa Begum">Parisa Begum</option>
+							<option value="SureshKumar.V">SureshKumar.V</option>
+							<option value="Thanalaksmi">Thanalaksmi</option>
+							<option value="KajaMohideen">KajaMohideen</option>
+						</datalist>
+						<input type="submit" value="Check">
+                    </form>
+                  </div>
+                </div>
+              </div>
+            </div>
+        </div>
+        </section>
+
+  </main><!-- End #main -->
+
+  <a href="#" class="back-to-top"><i class="ri-arrow-up-line"></i></a>
+  <div id="preloader"></div>
+
+  <!-- Vendor JS Files -->
+  <script src="{% static 'assets/vendor/jquery/jquery.min.js' %}"></script>
+  <script src="{% static 'assets/vendor/bootstrap/js/bootstrap.bundle.min.js' %}"></script>
+  <script src="{% static 'assets/vendor/jquery.easing/jquery.easing.min.js' %}"></script>
+  <script src="{% static 'assets/vendor/php-email-form/validate.js' %}"></script>
+  <script src="{% static 'assets/vendor/waypoints/jquery.waypoints.min.js' %}"></script>
+  <script src="{% static 'assets/vendor/isotope-layout/isotope.pkgd.min.js' %}"></script>
+  <script src="{% static 'assets/vendor/venobox/venobox.min.js' %}"></script>
+  <script src="{% static 'assets/vendor/owl.carousel/owl.carousel.min.js' %}"></script>
+  <script src="{% static 'assets/vendor/aos/aos.js' %}"></script>
+
+  <!-- Template Main JS File -->
+  <script src="{% static 'assets/js/main.js' %}"></script>
+
+</body>
+
+</html>

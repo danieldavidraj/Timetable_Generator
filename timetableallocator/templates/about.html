@@ -1,0 +1,21 @@
+<!-- djangotemplates/example/templates/about.html-->
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>About Us</title>
+</head>
+<body>
+  <p>
+  We are a group of Django enthusiasts with the following idiosyncrasies:
+
+  <ol>
+    <li>We only eat bananas on Saturdays.</li>
+    <li>We love making playing football on rainy days.</li>
+  </ol>
+  </p>
+  <a href="{% url 'home' %}">Go Home</a>
+  <a href="{% url 'about' %}">About This Site</a>
+</body>
+</html>
