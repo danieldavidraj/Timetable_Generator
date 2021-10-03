@@ -4,10 +4,10 @@
 A timetable generator application which can be used to generate timetables for schools, colleges for each class for 5 days in a week by providing respective csv files.
 
 ## Features :
-* Generates timetables for each class in the csv file
-* Teachers can see their personal timetables
-* Teachers wont be allotted to the same slot in the same day
-* Optimizes the process to finish within limited slots using <b>Graph Coloring</b>
+* Generates timetables for each class in the csv file.
+* Teachers can see their personal timetables.
+* Teachers wont be allotted the same slot on the same day.
+* Optimizes the process to finish within limited slots using <b>Graph Coloring.</b>
 
 ## Algorithm :
 * <b>Graph Coloring</b> Algorithm to avoid conflicts like teachers being assigned courses at the same time and day.
