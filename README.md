@@ -1,5 +1,5 @@
 # Timetable Generator
-### Demo: [Timetable Generator](https://timetable-allocator.herokuapp.com/)
+### Demo: [Timetable Generator](https://time-table-allocator.herokuapp.com/)
 
 A timetable generator application which can be used to generate timetables for schools, colleges for each class for 5 days in a week by providing respective csv files.
 
